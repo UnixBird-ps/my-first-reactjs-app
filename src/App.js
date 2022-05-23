@@ -1,24 +1,45 @@
 
-import React from 'react';
+import React from "react";
+import Navbar from "./Navbar.js";
+import Menu from "./Menu.js";
+import Main from "./Main.js";
 
-function App()
+
+class App extends React.Component
 {
-	let lResult =
-	(
-		<React.Fragment>
-			<div className="Navbar">
-			Navbar
-			</div>
-			<div className="Menu">
-			Menu
-			</div>
-			<div className="Main">
-			Main
-			</div>
-		</React.Fragment>
-	);
+	constructor( pProps )
+	{
+		super( pProps );
+		this.state = {};
+	}
 
-	return lResult;
+
+	componentDidMount()
+	{
+	}
+
+
+	componentWillUnmount()
+	{
+	}
+
+
+	render ()
+	{
+		let lResult =
+		(
+			<>
+				<Navbar />
+				<div class="container">
+					<Menu />
+					<Main />
+				</div>
+			</>
+		);
+
+		return lResult;
+	}
 }
+
 
 export default App;
