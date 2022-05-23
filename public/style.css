@@ -16,7 +16,6 @@ body, html
 
 body
 {
-	background-color: white;
 	color: black;
 	margin-top: 0px;
 	margin-left: 0px;
@@ -67,55 +66,40 @@ div.container
 	z-index: -1;
 }
 
-table {
+table
+{
 	border-collapse: collapse;
 }
 
-th {
+th
+{
 	text-align: left;
 }
 
-tr {
+tr
+{
 	background-color: white;
 	color: black;
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd)
+{
 	background-color: #eee;
 }
 
 
-th, td {
+th, td
+{
 	padding: 5px 10px;
 }
 
-th.number, td.number {
+th.number, td.number
+{
 	text-align: right;
 }
 
-form {
-	max-width: 500px;
-}
-
-label {
-	display: block;
-	margin-bottom: 12px;
-}
-
-label span {
-	display: inline-block;
-}
-
-.error {
-	color: rgb(211, 64, 64);
-	font-weight: bold;
-}
-
-.hidden {
-	display: none;
-}
-
-a {
+a
+{
 	color: rgb(148, 195, 223);
 }
 
