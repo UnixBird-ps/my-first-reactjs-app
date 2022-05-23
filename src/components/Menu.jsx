@@ -1,14 +1,16 @@
 
-import React from 'react';
+import React, { Component } from "react";
 
 
-class Menu extends React.Component
+class Menu extends Component
 {
-	constructor( pProps )
-	{
-		super( pProps );
-		this.state = {};
-	}
+	state = {};
+
+	// constructor( pProps )
+	// {
+	// 	super( pProps );
+	// 	this.state = {};
+	// }
 
 
 	componentDidMount()

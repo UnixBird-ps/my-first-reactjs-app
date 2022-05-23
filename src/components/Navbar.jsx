@@ -1,14 +1,16 @@
 
-import React from 'react';
+import React, { Component } from "react";
 
 
-class Navbar extends React.Component
+class Navbar extends Component
 {
-	constructor( pProps )
-	{
-		super( pProps );
-		this.state = {};
-	}
+	state = {};
+
+	// constructor( pProps )
+	// {
+	// 	super( pProps );
+	// 	this.state = {};
+	// }
 
 
 	componentDidMount()
@@ -34,10 +36,10 @@ class Navbar extends React.Component
 						<span> v0.1.0</span>
 					</div>
 				</div>
-				<div class="row col-auto">
-					<div class="col-auto" >
+				<div className="row col-auto">
+					<div className="col-auto" >
 					</div>
-					<div class="col-auto nav-container">
+					<div className="col-auto nav-container">
 					</div>
 				</div>
 			</div>

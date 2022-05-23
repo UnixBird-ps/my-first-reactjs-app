@@ -25,12 +25,18 @@ body
 	padding-right: 0px;
 }
 
+button
+{
+	cursor: pointer;
+	padding: 0px 7px;
+}
+/*
 div
 {
 	border : 1px solid;
 	border-color: black;
 }
-
+*/
 .navbar
 {
 	position: fixed;
