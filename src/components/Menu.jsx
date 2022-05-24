@@ -6,6 +6,18 @@ class Menu extends Component
 {
 	state = {};
 
+
+	render ()
+	{
+		let lResult =
+		(
+			<div className="col col-3" />
+		);
+
+		return lResult;
+	}
+
+
 	// constructor( pProps )
 	// {
 	// 	super( pProps );
@@ -13,25 +25,15 @@ class Menu extends Component
 	// }
 
 
-	componentDidMount()
-	{
-	}
+	// componentDidMount()
+	// {
+	// }
 
 
-	componentWillUnmount()
-	{
-	}
+	// componentWillUnmount()
+	// {
+	// }
 
-
-	render ()
-	{
-		let lResult =
-		(
-			<div className="Menu" />
-		);
-
-		return lResult;
-	}
 }
 
 

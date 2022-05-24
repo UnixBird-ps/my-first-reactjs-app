@@ -1,14 +1,15 @@
+
 import React, { Component } from "react";
 
 
 class Counter extends Component
 {
-	state =
-	{
-		title: this.props.counter.title,
-		max: this.props.counter.max,
-		value: this.props.counter.value
-	};
+	// state =
+	// {
+	// 	title: this.props.counter.title,
+	// 	max: this.props.counter.max,
+	// 	value: this.props.counter.value
+	// };
 
 
 	// constructor( pProps )
@@ -27,10 +28,9 @@ class Counter extends Component
 	{
 		let lResult =
 		(
-			<>
 				<div className="row row-cols-4">
 					<div className="col">
-						<h3>{ this.props.counter.title }</h3>
+						<span>{ this.props.counter.title }</span>
 					</div>
 					<div className="col">
 						<span className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
@@ -40,25 +40,12 @@ class Counter extends Component
 						<button onClick={ () => this.props.onDecrement( this.props.counter ) } type="button" className="btn btn-outline-primary btn-sm">-</button>
 					</div>
 					<div className="col">
-						<button onClick={ () => this.props.onRemove( this.props.counter.id ) } className="btn btn-outline-danger btn-sm">Remove</button>
+						<button onClick={ () => this.props.onRemove( this.props.counter.id ) } type="button" className="btn btn-outline-danger btn-sm">Remove</button>
 					</div>
 				</div>
-			</>
 		);
 
 		return lResult;
-	}
-
-
-	handleIncrement = () =>
-	{
-		if ( this.props.counter.value < this.props.counter.max ) this.setState( { value: this.props.counter.value + 1 } );
-	}
-
-
-	handleDecrement = () =>
-	{
-		if ( this.props.counter.value > 1 ) this.setState( { value: this.props.counter.value - 1 } );
 	}
 
 
@@ -77,14 +64,14 @@ class Counter extends Component
 	}
 
 
-	componentDidMount()
-	{
-	}
+	// componentDidMount()
+	// {
+	// }
 
 
-	componentWillUnmount()
-	{
-	}
+	// componentWillUnmount()
+	// {
+	// }
 
 }
 

@@ -4,23 +4,7 @@ import React, { Component } from "react";
 
 class Navbar extends Component
 {
-	state = {};
-
-	// constructor( pProps )
-	// {
-	// 	super( pProps );
-	// 	this.state = {};
-	// }
-
-
-	componentDidMount()
-	{
-	}
-
-
-	componentWillUnmount()
-	{
-	}
+	//state = {};
 
 
 	render ()
@@ -38,6 +22,10 @@ class Navbar extends Component
 				</div>
 				<div className="row col-auto">
 					<div className="col-auto" >
+						<button onClick={ this.props.onToggleShoppingCart } type="button" className="btn btn-sm btn-outline-white position-relative hidden" id="cart-icon">
+							<span className="material-icons">shopping_cart</span>
+							<span className="position-absolute top-50 start-100 translate-middle badge rounded-pill bg-primary" id="cart-items">{ this.props.totalCartItems }</span>
+						</button>
 					</div>
 					<div className="col-auto nav-container">
 					</div>
@@ -47,6 +35,24 @@ class Navbar extends Component
 
 		return lResult;
 	}
+
+
+	// constructor( pProps )
+	// {
+	// 	super( pProps );
+	// 	this.state = {};
+	// }
+
+
+	// componentDidMount()
+	// {
+	// }
+
+
+	// componentWillUnmount()
+	// {
+	// }
+
 }
 
 
