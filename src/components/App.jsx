@@ -79,10 +79,8 @@ class App extends Component
 			if ( pOrderRow.quantity > lProduct.max )
 			{
 				alert(
-					`
-						${ pOrderRow.quantity } > ${ lProduct.max }
-						That quantity would exceed max allowed. Please decrease and try again.
-					`
+					`${ pOrderRow.quantity } > ${ lProduct.max }\n`+
+					"That quantity would exceed max allowed. Please decrease and try again."
 				);
 				return;
 			}
@@ -105,10 +103,8 @@ class App extends Component
 			if ( lNewValue > lProduct.max )
 			{
 				alert(
-					`
-						${ lNewValue } > ${ lProduct.max }
-						That quantity would exceed max allowed. Please decrease and try again.
-					`
+					`${ lNewValue } > ${ lProduct.max }\n`+
+					"That quantity would exceed max allowed. Please decrease and try again."
 				);
 				return;
 			}
