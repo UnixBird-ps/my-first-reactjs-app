@@ -4,16 +4,6 @@ import Counter from "./Counter.jsx";
 
 class CounterList extends Component
 {
-	state =
-	{
-		counters:
-		[
-			{ id: 1, value: 4 },
-			{ id: 2, value: 0 },
-			{ id: 3, value: 0 },
-			{ id: 4, value: 0 }
-		]
-	};
 
 	// constructor( pProps )
 	// {
@@ -30,7 +20,23 @@ class CounterList extends Component
 		let lResult =
 		(
 			<ul className="list-group list-group-flush">
-				{ this.state.counters.map( counter => <li className="list-group-item" key={ counter.id }><Counter key={ counter.id } value={ counter.value } /></li> ) }
+				{
+					this.props.counters.map
+					(
+						counter =>
+						(
+							<li className="list-group-item" key={ counter.id }>
+								<Counter
+									onRemove={ this.props.onRemove }
+									onIncrement={ this.props.onIncrement }
+									onDecrement={ this.props.onDecrement }
+									key={ counter.id }
+									counter={ counter }
+								/>
+							</li>
+						)
+					)
+				}
 			</ul>
 		);
 
@@ -38,14 +44,14 @@ class CounterList extends Component
 	}
 
 
-	componentDidMount()
-	{
-	}
+	// componentDidMount()
+	// {
+	// }
 
 
-	componentWillUnmount()
-	{
-	}
+	// componentWillUnmount()
+	// {
+	// }
 
 }
 

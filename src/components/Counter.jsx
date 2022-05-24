@@ -5,7 +5,9 @@ class Counter extends Component
 {
 	state =
 	{
-		value: this.props.value
+		title: this.props.counter.title,
+		max: this.props.counter.max,
+		value: this.props.counter.value
 	};
 
 
@@ -23,14 +25,24 @@ class Counter extends Component
 
 	render ()
 	{
-		console.log( "props", this.props );
-
 		let lResult =
 		(
 			<>
-				<span className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
-				<button onClick={ () => this.handleIncrement( { id: 1 } ) } type="button" className="btn btn-outline-primary btn-sm">Increment</button>
-				<button onClick={ () => this.handleDecrement( { id: 1 } ) } type="button" className="btn btn-outline-primary btn-sm">Decrement</button>
+				<div className="row row-cols-4">
+					<div className="col">
+						<h3>{ this.props.counter.title }</h3>
+					</div>
+					<div className="col">
+						<span className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
+					</div>
+					<div className="col">
+						<button onClick={ () => this.props.onIncrement( this.props.counter ) } type="button" className="btn btn-outline-primary btn-sm">+</button>
+						<button onClick={ () => this.props.onDecrement( this.props.counter ) } type="button" className="btn btn-outline-primary btn-sm">-</button>
+					</div>
+					<div className="col">
+						<button onClick={ () => this.props.onRemove( this.props.counter.id ) } className="btn btn-outline-danger btn-sm">Remove</button>
+					</div>
+				</div>
 			</>
 		);
 
@@ -40,19 +52,19 @@ class Counter extends Component
 
 	handleIncrement = () =>
 	{
-		this.setState( { value: this.state.value + 1 } );
+		if ( this.props.counter.value < this.props.counter.max ) this.setState( { value: this.props.counter.value + 1 } );
 	}
 
 
 	handleDecrement = () =>
 	{
-		if ( this.state.value > 0 ) this.setState( { value: this.state.value - 1 } );
+		if ( this.props.counter.value > 1 ) this.setState( { value: this.props.counter.value - 1 } );
 	}
 
 
 	formatCount()
 	{
-		const lValue = this.state.value;
+		const lValue = this.props.counter.value;
 		return lValue === 0 ? "Zero" : lValue;
 	}
 
@@ -60,7 +72,7 @@ class Counter extends Component
 	getBadgeClasses()
 	{
 		let lClasses = "badge rounded-pill m-2 bg-";
-		lClasses += this.state.value === 0 ? "warning" : "primary";
+		lClasses += this.props.counter.value === 0 ? "warning" : "primary";
 		return lClasses;
 	}
 
