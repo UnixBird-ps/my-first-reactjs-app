@@ -5,6 +5,8 @@ import Menu from "./Menu.jsx";
 import ProductList from "./ProductList.jsx";
 import ShoppingCart from "./ShoppingCart.jsx";
 
+const LOCAL_STORAGE_SHOPPING_CART_COUNTERS = "WebShopApp.shoppingCartCounters";
+
 
 class App extends Component
 {
@@ -38,7 +40,7 @@ class App extends Component
 					onToggleShoppingCart={ this.toggleShoppingCart }
 					totalCartItems={ this.countCartItems() }
 				/>
-				<div className="container">
+				<div className="container container-width">
 					<Menu />
 					<main className="container">
 						<ProductList
@@ -141,8 +143,8 @@ class App extends Component
 		const lCounters = [ ...lNewState.shoppingCart.counters ];
 		for ( let c of lCounters )
 		{
-			if ( c.value > c.max ) c.value = c.max;
-			if ( c.value < c.min ) c.value = c.min;
+			if ( c.value > c.product.max ) c.value = c.product.max;
+			if ( c.value < c.product.min ) c.value = c.product.min;
 		}
 		lNewState.shoppingCart.counters = lCounters;
 		pOptions.changeState &&  this.setState( lNewState );
@@ -192,6 +194,19 @@ class App extends Component
 	componentDidMount()
 	{
 		this.limitValues();
+		const lCounters = JSON.parse( localStorage.getItem( LOCAL_STORAGE_SHOPPING_CART_COUNTERS ) );
+		if ( lCounters )
+		{
+			let lNewState = this.state;
+			lNewState.shoppingCart.counters = JSON.parse( localStorage.getItem( LOCAL_STORAGE_SHOPPING_CART_COUNTERS ) );
+			this.setState( lNewState );
+		}
+	}
+
+
+	componentDidUpdate()
+	{
+		localStorage.setItem( LOCAL_STORAGE_SHOPPING_CART_COUNTERS, JSON.stringify( this.state.shoppingCart.counters ) );
 	}
 
 

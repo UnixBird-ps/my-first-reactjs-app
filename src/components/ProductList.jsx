@@ -8,24 +8,22 @@ class ProductList extends Component
 	{
 		let lResult =
 		(
-			<>
 				<ul className='list-group list-group-flush' id='products'>
-						{
-							this.props.products.map
+					{
+						this.props.products.map
+						(
+							product =>
 							(
-								product =>
-								(
-									<Product
-										key={ product.id }
-										inList={ true }
-										onAddToCart={ this.props.onAddToCart }
-										product={ product }
-									/>
-								)
+								<Product
+									key={ product.id }
+									inList={ true }
+									onAddToCart={ this.props.onAddToCart }
+									product={ product }
+								/>
 							)
-						}
+						)
+					}
 				</ul>
-			</>
 		);
 
 		return lResult;

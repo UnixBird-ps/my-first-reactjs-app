@@ -72,6 +72,11 @@ div.container
 	z-index: -1;
 }
 
+div.container-width
+{
+	max-width: 1080px;
+}
+
 table
 {
 	border-collapse: collapse;
@@ -88,11 +93,6 @@ tr
 	color: black;
 }
 
-tbody tr:nth-child(odd)
-{
-	background-color: #eee;
-}
-
 
 th, td
 {
@@ -102,6 +102,11 @@ th, td
 th.number, td.number
 {
 	text-align: right;
+}
+
+tbody tr:nth-child(odd)
+{
+	background-color: #eee;
 }
 
 a
@@ -114,16 +119,20 @@ p
 	margin: 5px;
 }
 
-.cartContainer{
+div.cartContainer{
 	position: fixed;
 	right: 5px;
-	top: 40px;
-	border-radius: 10px;
-	padding-top: 1%;
-	padding-bottom: 25px;
-	padding-right: 1%;
-	padding-left: 1%;
+	top: 45px;
+	border : 1px solid;
+	border-color: black;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	/*margin-left: 5px;*/
 	display: inline-table;
+	background-color: white;
 }
 
 .cartButtons {

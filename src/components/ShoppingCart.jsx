@@ -9,8 +9,8 @@ class ShoppingCart extends Component
 	{
 		let lResult =
 		(
-			<div className="col-auto shopping-cart">
-				<div className="cartContainer">
+			<div className="cartContainer">
+				<div className="col-auto shopping-cart">
 					<ul className="list-group list-group-flush">
 						{
 							this.props.counters.map
@@ -31,8 +31,8 @@ class ShoppingCart extends Component
 						}
 					</ul>
 					<div className="cartButtons">
-						<button className="btn btn-sm btn-outline-dark cancelButton">Cancel</button>
-						<button className="btn btn-sm btn-outline-dark orderButton">Order</button>
+						<button className="btn btn-sm btn-outline-dark cancelButton">Cancel Order</button>
+						<button className="btn btn-sm btn-outline-dark orderButton">Checkout</button>
 					</div>
 				</div>
 			</div>

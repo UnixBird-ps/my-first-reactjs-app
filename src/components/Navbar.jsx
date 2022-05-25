@@ -36,23 +36,6 @@ class Navbar extends Component
 		return lResult;
 	}
 
-
-	// constructor( pProps )
-	// {
-	// 	super( pProps );
-	// 	this.state = {};
-	// }
-
-
-	// componentDidMount()
-	// {
-	// }
-
-
-	// componentWillUnmount()
-	// {
-	// }
-
 }
 
 
